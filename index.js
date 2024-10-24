@@ -17,7 +17,9 @@ app.get('/', (req, res) => {
 app.listen(port, () =>{
     console.log("listening on port " + port);
 })
-
+app.get('/getdata', (req, res) => {
+     res.send('this is an other api');
+}
 app.use((err, req, res) => {
     const statuscode = err.statusCode || 500;
     const message = err.message || "Internal server Error";
